@@ -1,0 +1,35 @@
+<div> 
+  <div class="form-group">
+  <input class="form-control" name="filterDatos" type="text" placeholder="Search" [(ngModel)]="filterDatos">
+  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </div>
+</div><br><br>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Start-Date</th>
+        <th scope="col">End_Date</th>
+        <th scope="col">Start-Time</th>
+        <th scope="col">End_Time</th>
+        <th scope="col">Opcions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of myEvent | filter:filterDatos">
+        <th scope="row">{{event.id}}</th>
+        <td>{{event.title}}</td>
+        <td>{{event.start_date}}</td>
+        <td>{{event.end_date}}</td>
+        <td>{{event.start_time}}</td>
+        <td>{{event.end_time}}</td>
+        <td>
+          <a class="btn btn-primary btn-sm" routerLink="/FormEvent/{{event.id}}">Ver/Editar</a>
+          <a class="btn btn-primary btn-sm btn-danger" (click)="delete(event.id)">Eliminar</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

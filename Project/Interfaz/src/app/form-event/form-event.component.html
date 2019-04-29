@@ -1,0 +1,30 @@
+
+<h2>Datos del nuevo evento</h2>
+<div>
+<div class="form-group">
+    <label for="title">Titles</label>
+    <input [(ngModel)]="event.title" type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="Ingrese evento">
+   </div>
+
+  <div class="form-group">
+    <label for="start-date">Fecha de inicio</label>
+    <input [(ngModel)]="event.start_date" type="date" class="form-control" id="start-date" aria-describedby="emailHelp">
+     </div>
+
+  <div class="form-group">
+    <label for="end-date">Fecha de finalización</label>
+    <input [(ngModel)]="event.end_date" type="date" class="form-control" id="end-date" aria-describedby="emailHelp" >
+      </div>
+
+  <div class="form-group">
+    <label for="start-time">Hora de inicio</label>
+    <input [(ngModel)]="event.start_time" type="time" class="form-control" id="start-time" aria-describedby="emailHelp">
+     </div>
+
+  <div class="form-group">
+    <label for="end-time">Hora de finalización</label>
+    <input [(ngModel)]="event.end_time" type="time" class="form-control" id="end-time" aria-describedby="emailHelp">
+     </div>
+
+  <button (click)="saveEvent()" class="btn btn-primary btn-block">Guardar</button>
+</div>
